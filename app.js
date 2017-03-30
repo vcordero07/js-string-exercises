@@ -44,9 +44,9 @@ var isBlank = function(str) {
     }
 }
 var isBlank = function(str) {
-    return str === ""
-        ? true
-        : false;
+    return str === "" ?
+        true :
+        false;
 }
 
 console.log(isBlank(''));
@@ -82,9 +82,9 @@ const errorHandler = str => {
 };
 
 const stringMinusAFew = (str, numToTakeOut) => {
-    return typeof str === 'string' && typeof numToTakeOut === 'number'
-        ? str.slice(0, numToTakeOut)
-        : errorHandler(str);
+    return typeof str === 'string' && typeof numToTakeOut === 'number' ?
+        str.slice(0, numToTakeOut) :
+        errorHandler(str);
 };
 
 const abbrev_name = str => {
@@ -120,9 +120,9 @@ const errorHandler = str => {
 };
 
 const stringMinusAFew = (str, numToTakeOut) => {
-    return typeof str === 'string' && typeof numToTakeOut === 'number'
-        ? str.slice(0, numToTakeOut)
-        : errorHandler(str);
+    return typeof str === 'string' && typeof numToTakeOut === 'number' ?
+        str.slice(0, numToTakeOut) :
+        errorHandler(str);
 };
 
 //Solution:
@@ -216,11 +216,36 @@ proctect_email("robin_singh@example.com");
 console.clear();
 
 let stringParameterize = str => {
-  console.log(str);
-  let newStr = str.toLowerCase().replace(/\s+/g, '-');
-  console.log(newStr);
-  return newStr;
+    console.log(str);
+    let newStr = str.toLowerCase().replace(/\s+/g, '-');
+    console.log(newStr);
+    return newStr;
 };
 
 stringParameterize("Hello From Another World!");
 console.log(stringParameterize("Robin Singh from USA."));
+
+
+// 8. Write a JavaScript function to capitalize the first letter of a string. Go to the editor
+// Test Data :
+// console.log(capitalize('js string exercises'));
+// "Js string exercises"
+
+let capitalize = str => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
+console.log(capitalize('js string exercises'));
+
+// 9. Write a JavaScript function to capitalize the first letter of each word in a string. Go to the editor
+// Test Data :
+// console.log(capitalize_Words('js string exercises'));
+// "Js String Exercises"
+
+let capitalize_Words = str => {
+    return str.replace(/\w\S*/g, (txt) => {
+        return txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase();
+    });
+};
+
+console.log(capitalize_Words('js string exercises'));
